@@ -20,7 +20,7 @@ Step 2 - Download Eclipse CHE with OpenShift plugin
 
 http://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/org/eclipse/che/openshift-plugin-assembly-main/4.6.0-SNAPSHOT/
 
-Step 3 - Unzip Eclipse Che to a directory. If you are not installing in your home directory, Step 4a will have to be executed. By default, docker-machine only mounts the home filesystem in the docker machine. Eclipse CHE will need access to the file system where it is installed.
+Step 3 - Unzip Eclipse Che to a directory. If you are not installing in your home directory, Step 6a will have to be executed. By default, docker-machine only mounts the home filesystem in the docker machine. Eclipse CHE will need access to the file system where it is installed.
 
 Step 4 - Create CHE user in OpenShift and obtain OAuthToken
 

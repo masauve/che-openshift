@@ -1,5 +1,6 @@
 # che-openshift
 
+This setup is to install and configure the Eclipse IDE with GIT and OpenShift. It will install a local CHE server. Many other configurations are possible.
 
 Pre-requisites
 
@@ -22,7 +23,7 @@ http://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/org/e
 
 Step 3 - Unzip Eclipse Che to a directory of your choice - $CHE_HOME.
 
-If you are not installing in your home directory, Step 6a will have to be executed. By default, docker-machine only mounts the home filesystem in the docker machine. Eclipse CHE will need access to the file system where it is installed.
+If you are not installing in your home directory, Step 7a will have to be executed. By default, docker-machine only mounts the home filesystem in the docker machine. Eclipse CHE will need access to the file system where it is installed.
 
 Step 4 - Create CHE user in OpenShift and obtain OAuthToken
 
@@ -41,11 +42,23 @@ https://eclipse-che.readme.io/docs/openshift-config
 oauth.openshift.clientid=che
 oauth.openshift.clientsecret=$OPENSHIFT_OAUTH_TOKEN
 
-Step 6 - Start Eclipse CHE
+Step 6 Configure GitHub OAuth (optionnal)
+
+Create an OAuth Token in GitHub (or any other OAuth enabled GIT server)
+In che.properties, add the following:
+
+oauth.github.clientid=xxxxxxxxxxxxxxxx
+oauth.github.clientsecret=xxxxxxxxxxxxxxxxxxxxx
+oauth.github.authuri=https://github.com/login/oauth/authorize
+oauth.github.tokenuri=https://github.com/login/oauth/access_token
+oauth.github.redirecturis=http://localhost:8080/wsmaster/api/oauth/callback
+
+
+Step 7 - Start Eclipse CHE
 
 $CHE_HOME/bin/che.sh
 
-Step 6a (if required) - Mount Eclipse CHE filesystem in che docker-machine
+Step 7a (if required) - Mount Eclipse CHE filesystem in che docker-machine
 
 Before creating a workspace, if you have installed CHE outside your home directory, you will need to mount the CHE installation directory inside your docker-machine.
 
@@ -57,10 +70,23 @@ machine-diskutil.sh mount che $CHE_HOME
 restart Eclipse Che
 
 
-Step 7 - Create CHE workspace
+Step 8 - Create CHE workspace
 
-Step 8 - Connect to OpenShift
+Open Eclipse CHE (by default it will run on http://localhost:8080 )
+Create and start a CHE Workspace (blank or java) using CHE menus.
 
-Step 9 - Create project
+Step 9 - Connect to OpenShift
 
-Step 10 - Validate Environment
+In your created workspace, all interactions with OpenShift are located on the OpenShift top menu item as described here:
+
+https://eclipse-che.readme.io/docs/openshift-user-guide
+
+Step 10 - Create project
+
+Create a new project by importing code from GIT
+for example:
+https://github.com/masauve/continuous-delivery-demo-app
+
+Step 11 - Validate Environment
+
+Deploy to OpenShift using Openshift menu.

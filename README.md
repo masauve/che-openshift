@@ -17,9 +17,9 @@ Set JAVA_HOME to the location of a JDK 1.8
 Set DOCKER_HOST to localhost
 Verify that port 8080 is available on your laptop
 
-Step 2 - Download Eclipse CHE with OpenShift plugin
+Step 2 - Download Latest Eclipse CHE with OpenShift plugin
 
-http://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/org/eclipse/che/openshift-plugin-assembly-main/4.6.0-SNAPSHOT/
+http://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/org/eclipse/che/openshift-plugin-assembly-main/0.1.0-SNAPSHOT/
 
 Step 3 - Unzip Eclipse Che to a directory of your choice - $CHE_HOME.
 

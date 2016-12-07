@@ -73,6 +73,7 @@ restart Eclipse Che
 Step 8 - Create CHE workspace
 
 Open Eclipse CHE (by default it will run on http://localhost:8080 )
+Use Firefox, Chrome was behaving badly for me
 Create and start a CHE Workspace (blank or java) using CHE menus.
 
 Step 9 - Connect to OpenShift
